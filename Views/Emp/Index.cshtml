@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MVC_RNWA.Models.CrudEmp>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista svih uposlenih </h2>
+
+<p>
+    @Html.ActionLink("Dodaj novog uposlenog", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Ime
+        </th>
+        <th>
+           Prezime
+        </th>
+        <th>
+            Osobni ID
+        </th>
+        <th>
+            E-mail
+        </th>
+        <th>
+            Broj ureda
+        </th>
+        <th>
+            Broj završenih prijava
+        </th>
+        <th>
+            Naziv posla 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.extension)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officeCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reportsTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jobTitle)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.employeeNumber }) |
+            @Html.ActionLink("Briši", "Delete", new { id=item.employeeNumber })
+        </td>
+    </tr>
+}
+
+</table>

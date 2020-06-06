@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MVC_RNWA.Models.CrudProp>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Popis svih prozivoda</h2>
+
+<p>
+    @Html.ActionLink("Dodaj novi proizvod", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Produkt ID
+        </th>
+        <th>
+            Naziv proizovda
+        </th>
+        <th>
+            Kategorija
+        </th>
+        <th>
+            Skala
+        </th>
+        <th>
+            Proizvođać
+        </th>
+        <th>
+            Detalji
+        </th>
+        <th>
+            Količina
+        </th>
+        <th>
+            Nabavna cijena
+        </th>
+        <th>
+            Prodajna cijena
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.productCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.productName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.productLine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.productScale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.productVendor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.productDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantityInStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.buyPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MSRP)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new {  id=item.productCode}) |
+            @Html.ActionLink("Briši", "Delete", new { id=item.productCode})
+        </td>
+    </tr>
+}
+
+</table>
