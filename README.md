@@ -2,7 +2,7 @@
 
 Proizvodi SELECT
 
-![](Content/Images/proizvodl.jpg)
+![](Content/Images/proizvodil.jpg)
 
 Proizvodi CREATE
 
